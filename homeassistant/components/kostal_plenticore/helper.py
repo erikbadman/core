@@ -78,7 +78,8 @@ class Plenticore:
                     "Properties:VersionIOC",
                     "Properties:VersionMC",
                 ],
-                "scb:network": ["Hostname"],
+                "scb:network": ["Network:Hostname"],
+                # "scb:network": ["Hostname"],
             }
         )
 
@@ -91,7 +92,8 @@ class Plenticore:
             identifiers={(DOMAIN, device_local["Properties:SerialNo"])},
             manufacturer="Kostal",
             model=f"{prod1} {prod2}",
-            name=settings["scb:network"]["Hostname"],
+            # name=settings["scb:network"]["Hostname"],
+            name=settings["scb:network"]["Network:Hostname"],
             sw_version=f'IOC: {device_local["Properties:VersionIOC"]}'
             + f' MC: {device_local["Properties:VersionMC"]}',
         )
